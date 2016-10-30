@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txt_PN = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.goToSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txt_MN = new System.Windows.Forms.TextBox();
             this.txt_CT = new System.Windows.Forms.TextBox();
             this.txt_P = new System.Windows.Forms.TextBox();
@@ -51,14 +54,32 @@
             this.btn_AddComponent = new System.Windows.Forms.Button();
             this.cb_CT = new System.Windows.Forms.ComboBox();
             this.cb_V = new System.Windows.Forms.ComboBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_PN
             // 
+            this.txt_PN.ContextMenuStrip = this.contextMenuStrip1;
             this.txt_PN.Location = new System.Drawing.Point(137, 39);
             this.txt_PN.Name = "txt_PN";
             this.txt_PN.Size = new System.Drawing.Size(100, 20);
             this.txt_PN.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.goToSiteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(122, 26);
+            // 
+            // goToSiteToolStripMenuItem
+            // 
+            this.goToSiteToolStripMenuItem.Name = "goToSiteToolStripMenuItem";
+            this.goToSiteToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.goToSiteToolStripMenuItem.Text = "GoToSite";
+            this.goToSiteToolStripMenuItem.Click += new System.EventHandler(this.goToSiteToolStripMenuItem_Click);
             // 
             // txt_MN
             // 
@@ -241,11 +262,34 @@
             this.cb_V.Size = new System.Drawing.Size(121, 21);
             this.cb_V.TabIndex = 22;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(307, 20);
+            this.richTextBox1.TabIndex = 23;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.Visible = false;
+            this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Location = new System.Drawing.Point(400, 294);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancel.TabIndex = 24;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 325);
+            this.ControlBox = false;
+            this.Controls.Add(this.btn_Cancel);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.cb_V);
             this.Controls.Add(this.cb_CT);
             this.Controls.Add(this.btn_AddComponent);
@@ -273,6 +317,7 @@
             this.Text = "Add New Component";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +348,9 @@
         private System.Windows.Forms.Button btn_AddComponent;
         private System.Windows.Forms.ComboBox cb_CT;
         private System.Windows.Forms.ComboBox cb_V;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem goToSiteToolStripMenuItem;
+        private System.Windows.Forms.Button btn_Cancel;
     }
 }
